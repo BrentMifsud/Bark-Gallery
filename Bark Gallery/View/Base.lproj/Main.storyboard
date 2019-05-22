@@ -77,11 +77,56 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="34T-9l-p9d"/>
+                        <segue destination="tXP-o7-9gJ" kind="relationship" relationship="viewControllers" id="n3E-1y-Nka"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLz-US-uE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Select By Breed-->
+        <scene sceneID="a9f-G7-OdZ">
+            <objects>
+                <viewController id="tXP-o7-9gJ" userLabel="Select By Breed" customClass="SelectByBreedViewController" customModule="Bark_Gallery" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S99-cU-TuV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-7H-BWQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="669"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-tR-SCe">
+                                <rect key="frame" x="0.0" y="713" width="414" height="100"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-fw-UUM" userLabel="Breed Picker">
+                                        <rect key="frame" x="0.0" y="0.0" width="207" height="100"/>
+                                    </pickerView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EU-Cr-DfL" userLabel="Subbreed Picker">
+                                        <rect key="frame" x="207" y="0.0" width="207" height="100"/>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="tm1-5F-5ZP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="IsA-tR-SCe" secondAttribute="trailing" id="0aw-F5-oSJ"/>
+                            <constraint firstItem="Kb9-7H-BWQ" firstAttribute="leading" secondItem="5vZ-eS-8NN" secondAttribute="leading" id="4kP-3a-NLB"/>
+                            <constraint firstItem="IsA-tR-SCe" firstAttribute="bottom" secondItem="5vZ-eS-8NN" secondAttribute="bottom" id="FgM-9O-egK"/>
+                            <constraint firstItem="Kb9-7H-BWQ" firstAttribute="trailing" secondItem="5vZ-eS-8NN" secondAttribute="trailing" id="Ko0-7S-HpD"/>
+                            <constraint firstItem="IsA-tR-SCe" firstAttribute="top" secondItem="Kb9-7H-BWQ" secondAttribute="bottom" id="SSw-vp-1VG"/>
+                            <constraint firstItem="Kb9-7H-BWQ" firstAttribute="top" secondItem="5vZ-eS-8NN" secondAttribute="top" id="ciK-Es-hGM"/>
+                            <constraint firstItem="IsA-tR-SCe" firstAttribute="leading" secondItem="5vZ-eS-8NN" secondAttribute="leading" id="gYj-yM-Bsg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5vZ-eS-8NN"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="By Breed" id="v7e-pF-b29"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnY-YK-eEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="900.00000000000011" y="519.64285714285711"/>
         </scene>
     </scenes>
 </document>
