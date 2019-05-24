@@ -11,7 +11,7 @@ import UIKit
 class RandomDogViewController: UIViewController {
 
 	@IBOutlet weak var imageView: UIImageView!
-	@IBOutlet weak var nextDogButton: UIButton!
+	@IBOutlet weak var fetchButton: UIButton!
 	@IBOutlet weak var errorLabel: UILabel!
 
 	override func viewDidLoad() {
@@ -21,7 +21,7 @@ class RandomDogViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		errorLabel.isHidden = true
-		nextDogButton.setTitle("Fetch!", for: .normal)
+		fetchButton.setTitle("Fetch!", for: .normal)
 		imageView.isHidden = false
 
 		DogApi.requestRandomImage(completionHandler: handleRandomImageResponse(imageData:error:))
@@ -47,7 +47,7 @@ class RandomDogViewController: UIViewController {
 		DispatchQueue.main.async {
 			self.errorLabel.isHidden = false
 			self.imageView.isHidden = true
-			self.nextDogButton.setTitle("Try Again", for: .normal)
+			self.fetchButton.setTitle("Try Again", for: .normal)
 		}
 	}
 

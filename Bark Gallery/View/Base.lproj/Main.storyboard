@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Ui8-6P-jQj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Next Dog!"/>
+                                <state key="normal" title="Fetch!"/>
                                 <connections>
                                     <action selector="nextDogButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kny-0P-C3n"/>
                                 </connections>
@@ -50,16 +50,16 @@
                             <constraint firstItem="N9i-Wj-c7L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nKg-1D-n6A"/>
                             <constraint firstItem="sul-0v-lCT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="qiV-6e-oBX"/>
                             <constraint firstItem="sul-0v-lCT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="rg7-G0-Q8s"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N9i-Wj-c7L" secondAttribute="trailing" id="rri-QT-9yx"/>
-                            <constraint firstItem="N9i-Wj-c7L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="val-aW-ue9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N9i-Wj-c7L" secondAttribute="trailing" id="rri-QT-9yx"/>
+                            <constraint firstItem="N9i-Wj-c7L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="val-aW-ue9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Random Dog" id="Z9t-3n-pm5" userLabel="Random"/>
                     <connections>
                         <outlet property="errorLabel" destination="N9i-Wj-c7L" id="PUW-Ny-Clj"/>
+                        <outlet property="fetchButton" destination="sul-0v-lCT" id="s5v-Zh-Mei"/>
                         <outlet property="imageView" destination="Mw9-qJ-CAp" id="t3r-BB-WfP"/>
-                        <outlet property="nextDogButton" destination="sul-0v-lCT" id="s5v-Zh-Mei"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,6 +72,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TUD-Pb-yhH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gAg-ga-VGW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -92,37 +93,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-7H-BWQ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="669"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IsA-tR-SCe">
-                                <rect key="frame" x="0.0" y="713" width="414" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unable to retrieve dog images. Check network connection." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYg-0D-w6S" userLabel="Error Label">
+                                <rect key="frame" x="5.5" y="424" width="403" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oj2-vB-Zi3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="619" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-7H-BWQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="619"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svp-Yv-bBh">
+                                        <rect key="frame" x="170.5" y="619" width="73" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vzq-Nm-lqc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Fetch!"/>
+                                    </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-fw-UUM" userLabel="Breed Picker">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="100"/>
-                                    </pickerView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EU-Cr-DfL" userLabel="Subbreed Picker">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="100"/>
+                                        <rect key="frame" x="0.0" y="669" width="414" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Mu7-Gh-o7b"/>
+                                            <constraint firstAttribute="height" constant="100" id="fun-Gi-4AQ"/>
+                                        </constraints>
                                     </pickerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="tm1-5F-5ZP"/>
+                                    <constraint firstAttribute="trailing" secondItem="hKw-fw-UUM" secondAttribute="trailing" id="Mia-zW-eCj"/>
+                                    <constraint firstItem="hKw-fw-UUM" firstAttribute="leading" secondItem="oj2-vB-Zi3" secondAttribute="leading" id="lp9-CD-hPP"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="IsA-tR-SCe" secondAttribute="trailing" id="0aw-F5-oSJ"/>
-                            <constraint firstItem="Kb9-7H-BWQ" firstAttribute="leading" secondItem="5vZ-eS-8NN" secondAttribute="leading" id="4kP-3a-NLB"/>
-                            <constraint firstItem="IsA-tR-SCe" firstAttribute="bottom" secondItem="5vZ-eS-8NN" secondAttribute="bottom" id="FgM-9O-egK"/>
-                            <constraint firstItem="Kb9-7H-BWQ" firstAttribute="trailing" secondItem="5vZ-eS-8NN" secondAttribute="trailing" id="Ko0-7S-HpD"/>
-                            <constraint firstItem="IsA-tR-SCe" firstAttribute="top" secondItem="Kb9-7H-BWQ" secondAttribute="bottom" id="SSw-vp-1VG"/>
-                            <constraint firstItem="Kb9-7H-BWQ" firstAttribute="top" secondItem="5vZ-eS-8NN" secondAttribute="top" id="ciK-Es-hGM"/>
-                            <constraint firstItem="IsA-tR-SCe" firstAttribute="leading" secondItem="5vZ-eS-8NN" secondAttribute="leading" id="gYj-yM-Bsg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZYg-0D-w6S" secondAttribute="trailing" id="AeH-7s-kIZ"/>
+                            <constraint firstItem="ZYg-0D-w6S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S99-cU-TuV" secondAttribute="leading" id="If8-rV-Aqp"/>
+                            <constraint firstItem="ZYg-0D-w6S" firstAttribute="centerX" secondItem="S99-cU-TuV" secondAttribute="centerX" id="NDT-Rk-CMj"/>
+                            <constraint firstItem="oj2-vB-Zi3" firstAttribute="top" secondItem="5vZ-eS-8NN" secondAttribute="top" id="RoU-Je-p5E"/>
+                            <constraint firstItem="ZYg-0D-w6S" firstAttribute="centerY" secondItem="S99-cU-TuV" secondAttribute="centerY" id="YAP-4F-mdZ"/>
+                            <constraint firstItem="oj2-vB-Zi3" firstAttribute="leading" secondItem="5vZ-eS-8NN" secondAttribute="leading" id="aQ6-sR-Oqv"/>
+                            <constraint firstItem="5vZ-eS-8NN" firstAttribute="bottom" secondItem="oj2-vB-Zi3" secondAttribute="bottom" id="cSP-MN-Mw2"/>
+                            <constraint firstItem="oj2-vB-Zi3" firstAttribute="trailing" secondItem="5vZ-eS-8NN" secondAttribute="trailing" id="lRu-qH-312"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5vZ-eS-8NN"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="By Breed" id="v7e-pF-b29"/>
+                    <connections>
+                        <outlet property="breedPicker" destination="hKw-fw-UUM" id="GUh-Ia-1Ad"/>
+                        <outlet property="errorLabel" destination="ZYg-0D-w6S" id="g8j-XU-ouL"/>
+                        <outlet property="fetchButton" destination="svp-Yv-bBh" id="SuW-6T-2ux"/>
+                        <outlet property="imageView" destination="Kb9-7H-BWQ" id="J3Z-PL-pqz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QnY-YK-eEU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

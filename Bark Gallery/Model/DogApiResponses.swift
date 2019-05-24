@@ -13,3 +13,8 @@ struct DogApiResponse: Codable{
 	let status: String
 	let message: String
 }
+
+struct DogApiBreedsResponse: Codable {
+	let status: String
+	let message: [String : [String]]
+}
